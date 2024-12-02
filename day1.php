@@ -24,7 +24,16 @@ function day1(){
             $distance += $rightNumbers[$i] - $leftNumbers[$i];
         }
     }
-    printf($distance);
 
+    print_r("Distance is: ".$distance.PHP_EOL);
+
+    //Part 2 starts here
+
+    $similarity = 0;
+    for($i = 0; $i < 1000; $i++){
+        $similarity += $leftNumbers[$i] * count(array_keys($rightNumbers, $leftNumbers[$i]));
+    }
+
+    printf("Similarity is: ".$similarity);
 }
 day1();
